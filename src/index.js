@@ -15,14 +15,14 @@ import { app, server } from "./lib/socket.js";
 dotenv.config();
 
 const PORT = process.env.PORT;
-const FRONTEND_URL=process.env.FRONTEND_URL;
+
 const __dirname = path.resolve();
 
 app.use(express.json());
 app.use(cookieParser());
 app.use(
   cors({
-    origin: [FRONTEND_URL, "http://localhost:5173"],
+    origin: "*",
     credentials: true,
   })
 );
